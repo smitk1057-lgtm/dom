@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="margin: 0; height: 200px;  width: 200px;border: 2px solid black; display: flex; align-items: center; justify-content: center;">
+  <button>Click</button>
+    </div>
+    <script>
+        let btn = document.querySelector("button")
+        let div = document.querySelector("div")
+        btn.addEventListener('click',(e)=>{
+          e.preventDefault()
+            let r  = Math.floor(Math.random()*256)
+            console.log(r)
+            let g = Math.floor(Math.random()*256)
+            console.log(g)
+            let b = Math.floor(Math.random()*256)
+            console.log(b)
+            div.style.backgroundColor=`rgb(${r},${g},${b})`
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ritik</h1>
+    <p>Radhe is a good Singer</p>
+    <script>
+        let heading=document.querySelector('h1')
+        let para = document.querySelector('p')
+        let value1=heading.innerText
+        let value2=para.innerText
+
+        let arr=[value1,value2]
+        let jsonform=JSON.stringify(arr)
+        localStorage.setItem("Data",jsonform)
+    </script>
+</body>
+</html>

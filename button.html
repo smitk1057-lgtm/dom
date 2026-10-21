@@ -1,0 +1,22 @@
+<!-- Inset a button with text 'click me' as the first element inside the paragraph created in -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+         let p=document.createElement('p')
+    p.innerText='Practice is most impotant'
+    p.setAttribute('style','background-color:black;color:green')
+     document.body.append(p)
+        let btn = document.createElement('button')
+        btn.innerText='Click Me'
+        p.prepend(btn)
+
+    </script>
+</body>
+</html>

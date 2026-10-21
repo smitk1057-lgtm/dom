@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1></h1>
+        <p></p>
+        <button>click</button>
+    </div>
+    <script>
+        let div = document.querySelector("div")
+        let h1 = document.querySelector("h1")
+        let para = document.querySelector('p')
+        let btn = document.querySelector("button")
+
+
+        btn.addEventListener("click",(e)=>{
+            e.preventDefault()
+
+            let jsonData = localStorage.getItem('value',)
+            console.log(jsonData, typeof jsonData)
+            let jsData = JSON.parse(jsonData)
+            console.log(jsData)
+
+            h1.innerText=jsData.v1
+            para.innerText=jsData.v2
+            
+
+        })
+    </script>
+</body>
+</html>

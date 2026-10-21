@@ -1,0 +1,50 @@
+let form = document.querySelector(".form-container")
+
+let btn = form.querySelector("button")
+
+let input_box = form.querySelectorAll("input")
+
+let users = [
+  {
+    name: "Ishwar Verma",
+    email: "ishwar@gmail.com",
+    pass: "123456",
+    cpass: "123456"
+  },
+  {
+    name: "Rahul Sharma",
+    email: "rahul@gmail.com",
+    pass: "rahul123",
+    cpass: "rahul123"
+  },
+  {
+    name: "Amit Kumar",
+    email: "amit@gmail.com",
+    pass: "amit123",
+    cpass: "amit123"
+  },
+  {
+    name: "Neha Singh",
+    email: "neha@gmail.com",
+    pass: "neha123",
+    cpass: "neha123"
+  },
+  {
+    name: "Pooja Verma",
+    email: "pooja@gmail.com",
+    pass: "pooja123",
+    cpass: "pooja123"
+  }
+];
+form.ddEventListener('click',(e)=>{
+    e.preventDefualt()
+     console.log( input_box[0].value, input_box[1].value, input_box[2].value,input_box[3].value)
+})
+
+for(let i=0;i<iusers.length;i++){
+    input_box[0].value=users[i].name
+    input_box[1].value=users[i].email
+     input_box[2].value=users[i].pass
+      input_box[3].value=users[i].cpass
+btn.click()
+}

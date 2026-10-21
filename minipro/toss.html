@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <span>Person :<span class="score">0</span></span> <br />
+    <span>Computer :<span class="score">0</span></span> <br />
+
+    <button id="head">Head</button>
+    <button id="tail">Tail</button>
+    <script>
+      let btns = document.querySelectorAll("button");
+      let score = document.querySelectorAll(".score");
+
+      for (let t of btns) {
+        t.addEventListener("click", toss);
+      }
+      function toss(eventobj) {
+        let SelectElement = eventobj.target;
+        let SelectedValue = SelectElement.innerText;
+        let arr = ["head", "tail"];
+        let randomIndex = parseInt(Math.random() * arr.length);
+        let tossValue = arr[randomIndex];
+        console.log("user Selection", SelectedValue);
+        console.log("toss value", tossValue);
+        if (SelectedValue.toLowerCase() === tossValue.toLowerCase()) {
+          score[0].innerText = +score[0].innerText + 1;
+        } else {
+          score[1].innerText = +score[1].innerText + 1;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <form action="">
+            <input type="text"  name ='email' placeholder=" Enter Your Email" id="email">
+            <button>Submit</button>
+            
+        </form>
+    <div></div>
+    <script>
+        let form=document.querySelector("form")
+        let email_box= document.querySelector("#email")
+    let div = document.querySelector('div')
+
+    form.addEventListener('submit',throt())
+
+     function display(){
+       // e.preventDefault()
+        let para=document.createElement('p')
+        para.innerText=email_box.value
+        div.append(para)
+       // email_box=''
+     }
+
+     function throt(){
+      
+        let flag=true
+        console.log("AA")
+        return (
+             (e)=>{
+                e.preventDefault()
+                console.log("BB")
+                if(flag==true){
+                    display()
+                    flag=false
+                    setTimeout(()=>{
+                        flag=true
+                    },5000)
+                }
+                else{
+                    console.log('false Click')
+                }
+            }     
+    )
+        }
+
+    
+    </script>
+</body>
+</html>

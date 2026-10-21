@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: row;
+        }
+        div{
+            height: 100px;
+            width: 100px;
+            border: 2px solid green ;
+            
+        }
+        p{
+            color: red;
+            
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p>
+
+    </p>
+    <script>
+      let getValue = localStorage.getItem("Value")
+         let printvalue=JSON.parse(getValue)
+
+         let para=document.querySelector('p')
+         para.innerText=printvalue
+         let div=document.createElement('div')
+         div.append(para)
+         document.body.append(div)
+    </script>
+</body>
+</html>

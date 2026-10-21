@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Style>
+      div{
+         background-color: chartreuse;
+        }
+    </Style>
+</head>
+<body>
+    <div class=" box" title="This is Div"> Div hai yeh</div>
+    <script>
+        let div=document.querySelector('.box')
+        // console.log(div.attributes)
+        // console.log(div.getAttribute('class'))
+        let classValue=div.getAttribute('class')
+        console.log(classValue)
+        div.setAttribute('class',`${classValue} random`)
+        console.log(div.attributes.class.value)
+    </script>
+</body>
+</html>

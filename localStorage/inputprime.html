@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" placeholder="enter the number">
+    <button>Click</button>
+    <script>
+        let input=document.querySelector('input')
+        let btn=document.querySelector('button')
+       btn.addEventListener('click',display)
+
+       function display(e){
+           e.preventDefault()
+           let value=Number(input.value)
+           let count=0
+           let arr=[]
+           for(let i=1;i<=value;i++){
+              if(value%i==0){
+                count++
+              }
+           }
+           if(count==2){
+            arr.push('Prime')
+           }
+           else{
+           arr.push('Not Prime')
+           }
+           console.log(arr)
+           let jsonData=JSON.stringify(arr)
+           localStorage.setItem("Value",jsonData)
+       }
+    </script>
+</body>
+</html>

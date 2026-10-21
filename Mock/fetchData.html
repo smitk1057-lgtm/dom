@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+
+    <style>
+        #products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 8px #ddd;
+        }
+
+        .card img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            margin: 10px;
+        }
+
+        .card h3 {
+            font-size: 15px;
+        }
+
+        .card p {
+            color: green;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="btn">Click</button>
+
+    <div id="products"></div>
+
+    <script>
+        let div = document.querySelector("#products");
+        let btn = document.querySelector("#btn");
+
+        btn.addEventListener("click", () => {
+
+            fetch('https://fakestoreapi.com/products')
+                .then((item) => {
+                    return item.json();
+                })
+                .then((data) => {
+
+                    div.innerHTML = "";
+
+                    for (let t of data) {
+                        let card = document.createElement("div");
+                        let para = document.createElement("h3");
+                        let img = document.createElement("img");
+                        let price = document.createElement("p");
+                        let category = document.createElement("p");
+                        let desc = document.createElement("p");
+                        let rating = document.createElement("p");
+
+                        card.className = "card";
+
+                        para.innerText = t.title;
+                        img.src = t.image;
+                        img.alt = t.title;
+                        price.innerText = "Price: $" + t.price;
+                        category.innerText = "Category: " + t.category;
+                        desc.innerText = t.description;
+                        rating.innerText =
+                            "Rating: " + t.rating.rate +
+                            " (" + t.rating.count + " reviews)";
+
+                        card.append(
+                            img,
+                            para,
+                            price,
+                            category,
+                            desc,
+                            rating
+                        );
+
+                        div.append(card);
+                    }
+                })
+                .catch((err) => {
+                    console.log("fail", err.message);
+                });
+        });
+    </script>
+
+</body>
+</html>

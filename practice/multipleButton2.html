@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     
+    <button id="a">Btn1</button>
+     <button id="b">Btn2</button>
+      <button id="c">Btn3</button>
+       <button id="d">Btn4</button>
+        <button id="e">Btn5</button>
+         <button id="f">Btn6</button>
+      
+       <p>0</p>
+
+       <script>
+        let btns=document.querySelectorAll('button')
+        let para = document.querySelector('p')
+
+
+        for(let i=0; i<btns.length;i++){
+
+            btns[i].addEventListener('click',(e)=>{ 
+          para.textContent=Number(para.textContent)+1
+             //   console.log(i)   
+         btns[i].style.backgroundColor='red'
+            })
+            console.log('loop complete')
+        }
+       </script>
+</body>
+</html>

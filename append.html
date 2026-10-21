@@ -1,0 +1,27 @@
+<!--create a <div> tag in html anf give it a class & some styling . Now create a new class in css and try to append this class to the <div> element -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            background-color: red;
+            padding: 10px;
+        }
+        .box2{
+            font-size: 60px;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">this is div</div>
+    <script>
+        let div=document.querySelector('.box')
+        div.setAttribute('class',`${div.getAttribute('class')} box2`)
+        console.log(div.getAttribute('class'))
+    </script>
+</body>
+</html>

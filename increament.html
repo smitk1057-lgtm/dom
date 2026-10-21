@@ -1,0 +1,30 @@
+<!--Build a counter increament an d dcrement similar to what you see in the shopping card on amazone or flipkard-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="decbtn">-</button>
+    <span class="counterValue">1</span>
+    <button class="incbtn">+</button>
+    <script>
+       let decbtn =document.querySelector('.decbtn')
+       let incbtn=document.querySelector('.incbtn')
+       let counterValue=document.querySelector('.counterValue')
+
+       decbtn.addEventListener('click',()=>{
+       let value = Number(counterValue.innerText)
+       if(value<=1){
+        return;
+       }
+        counterValue.innerText=Number(counterValue.innerText) - 1  //ya value-1
+       })
+        incbtn.addEventListener('click',()=>{
+        counterValue.innerText=Number(counterValue.innerText )+ 1
+       })
+    </script>
+</body>
+</html>

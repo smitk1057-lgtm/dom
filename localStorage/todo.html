@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            height:auto;
+            width: 150px;
+            border:  2px solid pink;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text">
+   <button>ADD TODO</button>
+    </div>
+
+    <div class="container">
+
+    </div>
+
+    <script>
+        let input =  document.querySelector('input')
+        let btn=document.querySelector('button')
+        let container=document.querySelector('.container')
+        btn.addEventListener('click',Display)
+  let orderList=document.createElement('ol')
+        function Display(e){
+            e.preventDefault()
+            if(input.value===''){
+                return 
+            }
+
+          
+            let list = document.createElement('li')
+            let button=document.createElement('button')
+             list.innerText=input.value
+             button.innerText='X'
+             list.append(button)
+             orderList.append(list)
+             container.append(orderList)
+             button.addEventListener('click',Remove)
+
+             function Remove(e){
+                e.preventDefault()
+                // list.innerText=''
+                e.target.parentElement.remove()
+             }
+
+             input.value=''
+
+        }
+    </script>
+ 
+
+ 
+</html>

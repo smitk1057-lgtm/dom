@@ -1,0 +1,34 @@
+<!--create a simple website with theme changing functionallity-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div> this is div  </div>
+   <button>Click</button>
+    <script>
+        let div=document.querySelector("div")
+        let btn=document.querySelector('button')
+     let body=document.querySelector('body')
+        btn.addEventListener('click',()=>{
+             //div.style.cssText='background-color:red; color:yellow;  font-size:50px;'
+             let theme='light'
+             if(theme==='light'){
+             body.style.backgroundColor='black'
+             body.style.color='yellow'
+             theme='black'
+             }
+
+             else{
+                body.style.backgroundColor='pink'
+                body.style.color='orange'
+                theme='light'
+             }
+
+        })
+    </script>
+</body>
+</html>

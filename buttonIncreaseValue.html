@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span
+    <h1>Increase button:</h1>
+    <button>0</button></span>
+    <script>
+        let btn=document.querySelector('button')
+        btn.addEventListener('click',()=>{
+        //    let count=Number(btn.innerText)
+        //     count++
+           //btn.innerText=count
+           btn.innerText=+btn.innerText+1
+        })
+        btn.addEventListener('blur',reset)
+        //alert('mujhe ckod ke maad jao')
+        function reset(){
+            btn.innerText=0
+        }
+    </script>
+</body>
+</html>

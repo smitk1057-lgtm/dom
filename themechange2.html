@@ -1,0 +1,35 @@
+<!-- create a simple website with theme changing functionallity solve this by css class-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .light{
+      background-color: pink;
+      color: red;
+    }
+    .dark{
+       background-color: red;
+       color: pink;
+    }
+    </style>
+</head>
+<body class="light">
+    <div>This ia div</div> 
+    <button>Change Theme</button>
+    <script>
+        let btn=document.querySelector('button')
+        let body=document.querySelector('body')
+        btn.addEventListener('click',()=>{
+            if(body.className==='light'){
+                body.className='dark'
+            }
+            else{
+                body.className='light'
+            }
+        })
+    </script>
+</body>
+</html>

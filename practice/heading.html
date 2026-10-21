@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="heading"></div>
+    <button>Add heading</button>
+    <script>
+        let heading=document.querySelector('.heading')
+        let btn=document.querySelector('button')
+        btn.addEventListener('click',display)
+        let count=0
+        function display(){
+    //    let add=document.createElement('div')
+    //   heading.append(add)   // multiple div add ho jayenge
+
+    let para=document.createElement('p')
+      para.innerText='Add Paragraph' + ++count
+
+      let h=document.createElement('h1')
+      h.innerText='Add heading'  
+
+    heading.append(para,h)
+   // heading.prepend(para)
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1> To Do App</h1>
+
+     <form>
+         <input type="text" placeholder="Enter todo">
+         <button> Add Todo</button>
+     </form>
+
+     <ol>
+        <li class="mohan"> Ramesh </li>
+        <li class="mohan"> Pankaj </li>
+     </ol>
+
+     <script>
+
+        let form = document.querySelector("form")
+        let input = document.querySelector("input")
+        let ol = document.querySelector("ol")
+        let arr = []
+
+         let brr = document.getElementsByClassName("mohan")
+
+
+        // check if some titmes exits in localstorage: 
+
+        let task_json = localStorage.getItem("task")
+        if(task_json){
+            arr = JSON.parse(task_json)
+        }
+
+        for(let t of arr){
+            let li = document.createElement("li")
+            li.className = "mohan"
+             li.innerText = t 
+             ol.append(li)
+        }
+
+        form.addEventListener("submit", (e)=>{
+            e.preventDefault()
+            let value = input.value 
+             let li = document.createElement("li")
+             li.className = "mohan"
+             li.innerText = value 
+             ol.append(li)
+             arr.push(value)
+             input.value = ""
+
+             // add to localstorage: 
+            //  localStorage.setItem("task", JSON.stringify(arr))
+            test()
+        })
+
+
+        function test(){
+           
+            for(let  t of brr){
+                t.style.backgroundColor = "tomato"
+            }
+        }
+
+     </script>
+</body>
+</html>

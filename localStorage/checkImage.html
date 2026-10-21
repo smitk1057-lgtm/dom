@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <button>ClickMe</button>
+    <script>
+   let btn  = document.querySelector('button')
+   btn.addEventListener('click',display)
+    
+   function display(){
+    let ol=document.createElement('ol')
+    let div=document.createElement('div')
+    div.style.cssText="height:200px; width:200px; border:2px solid black;"
+    let input=document.createElement('input')
+    let button=document.createElement('button')
+    button.innerText='Add'
+      
+    div.append(input,button)
+    document.body.append(div)
+   }
+    </script>
+</body>
+</html>

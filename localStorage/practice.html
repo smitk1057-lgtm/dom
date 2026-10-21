@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 100%;
+            border: 2px solid black;
+            background-color: antiquewhite;
+        }
+      
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text">
+        <input type="password">
+        <button>Click</button>      
+    </form>
+    <table>
+        <tr>
+            <th>Name</th>
+        <th>Password</th>
+        </tr>
+    
+
+    <script>
+       
+        let input =  document.querySelectorAll('input')
+        let btn=document.querySelector('button')
+        let table=document.querySelector('table')
+        btn.addEventListener('click',display)
+        function display(e){
+             e.preventDefault()
+             if(input[0].value=='' || input[1].value==''){
+            return 
+        }
+        // 
+        
+         let tablerow=document.createElement('tr')
+         let tabledata1=document.createElement('td')
+         let tabledata2=document.createElement('td')
+         tabledata1.innerText=input[0].value
+         tabledata2.innerText=input[1].value
+         tablerow.append(tabledata1,tabledata2)
+         table.append(tablerow)
+          input[0].value=''
+         input[1].value=''
+
+        }
+    </script>
+
+</body>
+</html>

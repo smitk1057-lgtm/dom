@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p style="background-color: blanchedalmond;">Hello</p>
+    <button>Click</button>
+    <script>
+        let btn=document.querySelector('button')
+        
+        btn.addEventListener('click',display)
+        function display(){
+         document.body.style.backgroundColor='red';
+         let para=document.querySelector('p')
+         para.style.backgroundColor='orange';
+        }
+    </script>
+</body>
+</html>

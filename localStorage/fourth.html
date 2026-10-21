@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <p></p>
+    <script>
+        let jsonData=localStorage.getItem('Data')
+        let getJson=JSON.parse(jsonData)
+
+        let heading=document.querySelector('h1')
+        let para = document.querySelector('p')
+        heading.innerText=getJson[0]
+        para.innerText=getJson[1]
+    </script>
+</body>
+</html>

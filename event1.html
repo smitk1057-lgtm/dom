@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            background-color: darkgoldenrod;
+            color: red;
+            width:200px;
+            height: 200px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>This ia a heading</h1>
+    <div class="box"></div>
+    <button class='firstbtn'>1stButton</button>
+    <form>
+        <input class="name" type="text" placeholder="enter name">
+        <button class="submitbtn" type="submit">click</button>
+    </form>
+    <script>
+        let firstbtn=document.querySelector('.firstbtn')
+        let box=document.querySelector('.box')
+       
+        // firstbtn.addEventListener('mousedown',function(){
+        //     console.log('mouse down')
+        // })
+        //  firstbtn.addEventListener('mouseup',function(){
+        //     console.log('mouse up')
+        // })
+        // box.addEventListener('mouseenter',()=>{
+        //     console.log('mouse enter ho gaya hai')
+        // })
+        // box.addEventListener('mouseleave',()=>{
+        //     console.log('mouse leave ho gaya hai')
+        // })
+        // box.addEventListener('mousemove',()=>{
+        //     console.log('mouse move ho gaya hai')
+        // })
+        //  box.addEventListener('contextmenu',()=>{
+        //     console.log('mouse contextmenu ho gaya hai')
+        // })
+        //  box.addEventListener('auxclick',()=>{
+        //     console.log('mouse auxclick ho gaya hai')
+        // // })
+        // firstbtn.addEventListener('keypress',function(){
+        //     console.log('key press hua hai')
+        // })
+
+         
+        //  firstbtn.addEventListener('keyup',function(){
+        //     console.log('key up hua hai')
+        // })
+
+        //  firstbtn.addEventListener('keydown',function(){
+        //     console.log('key down hua hai')
+        // })
+         let nameInput=document.querySelector('.name')
+         let form=document.querySelector('form')
+         let submitbtn=document.querySelector('submitbtn')
+        //  form.addEventListener('submit',function(e){
+        //     e.preventDefault()
+        //     console.log("submit ho gaya")
+        // })
+        // nameInput.addEventListener('focus',()=>{
+        //     console.log('focus event work')
+        // })
+        // nameInput.addEventListener('blur',()=>{
+        //     console.log('blur event work')
+        // })
+        // nameInput.addEventListener('input',()=>{
+        //     console.log(nameInput.value)
+        // })
+        //  nameInput.addEventListener('change',()=>{
+        //     console.log(nameInput.value)
+        // })
+        box.addEventListener('touchmove',()=>{
+            console.log('mobile screen touch ho raha hai')
+        })
+    </script>
+</body>
+</html>

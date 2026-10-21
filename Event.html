@@ -1,0 +1,38 @@
+<!--Event Handling-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello DoM</h1>
+    <button class='firstbtn' onclick="console.log('mujhe per click kiya gaya hai')" ondblclick="console.log('mujhe per phir se click kiya gaya hai')">Click Me</button>
+    <script>
+        // let firstbutton=document.querySelector('.firstbtn')
+        // firstbutton.onclick=()=>{
+        //     console.log('mai property method wala click hoon')
+        // }
+        // firstbutton.ondblclick=()=>{
+        //     console.log('double click')
+        // }
+        // firstbutton.onclick=()=>{
+        //     console.log('dursa click override kar diya phele onclick ko')
+        //     firstbutton.addEventListener('click',()=>{
+        //         console.log('ab yeh wala event Listener lag gaya')
+        //     })
+        //      firstbutton.addEventListener('click',()=>{
+        //         console.log('ab second wala event lag gaya')
+        //     })
+        // } 
+        let firstbutton=document.querySelector('.firstbtn')
+        let showConsole=function (){
+            console.log('hello')
+        }
+        firstbutton.addEventListener("click",showConsole)
+        firstbutton.removeEventListener('click',showConsole)
+       
+    </script>
+</body>
+</html>

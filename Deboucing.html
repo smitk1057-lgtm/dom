@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text">
+    </form>
+    <div>
+
+    </div>
+<script>
+let countries = [
+"Afghanistan","Albania","Algeria","Andorra","Angola","Argentina","Armenia","Australia","Austria","Azerbaijan",
+"Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan","Bolivia",
+"Brazil","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Chad","Chile",
+"China","Colombia","Comoros","Congo","Costa Rica","Croatia","Cuba","Cyprus","Czech Republic","Denmark",
+"Dominican Republic","Ecuador","Egypt","El Salvador","Estonia","Ethiopia","Fiji","Finland","France","Germany",
+"Ghana","Greece","Guatemala","Haiti","Honduras","Hungary","Iceland","India","Indonesia","Iran",
+"Iraq","Ireland","Israel","Italy","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kuwait",
+"Kyrgyzstan","Laos","Latvia","Lebanon","Liberia","Libya","Lithuania","Luxembourg","Madagascar","Malaysia",
+"Maldives","Mali","Malta","Mexico","Mongolia","Morocco","Myanmar","Nepal","Netherlands","New Zealand",
+"Nigeria","North Korea","Norway","Oman","Pakistan","Panama","Peru","Philippines","Poland","Portugal",
+"Qatar","Romania","Russia","Saudi Arabia","Serbia","Singapore","Slovakia","Slovenia","Somalia","South Africa",
+"South Korea","Spain","Sri Lanka","Sudan","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Thailand",
+"Turkey","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Uzbekistan","Venezuela","Vietnam",
+"Yemen","Zambia","Zimbabwe"
+];
+let form=document.querySelector('form')
+let input_box=document.querySelector('input')
+let div=document.querySelector('div')
+input_box.addEventListener('input',display)
+
+function display(e){
+    div.innerHTML=''
+let value=input_box.value
+let filterCountries=countries.filter(city=>city.toLowerCase().includes(value.toLowerCase()))
+let ul=document.createElement('ul')
+for(let t of filterCountries){
+    let li=document.createElement('li')
+    li.innerText=t
+    ul.append(li)
+}
+div.append(ul)
+
+}
+
+
+//debouncing
+function debounce(){
+    let id;
+    return ()=>{
+        if(!id){
+            console.log('Previous is cancelled')
+        }
+        clearTimeout(id)
+     id =  setTimeout(display,3000)
+    }
+}
+</script>
+</body>
+</html>

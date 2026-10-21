@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Color Board</title>
+
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #111;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(40, 15px); /* 40 x 20 = 800 */
+        gap: 5px;
+    }
+
+    .square {
+        width: 15px;
+        height: 15px;
+        background-color: #1d1d1d;
+        transition: background-color 1s ease;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container"></div>
+
+<script>
+    const container = document.querySelector('.container');
+    const totalBoxes = 800;
+
+    function getRandomColor() {
+        const colors = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+            color += colors[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    for (let i = 0; i < totalBoxes; i++) {
+        const square = document.createElement('div');
+        square.classList.add('square');
+
+        square.addEventListener('mouseenter', () => {
+            const color = getRandomColor();
+            square.style.backgroundColor = color;
+
+            setTimeout(() => {
+                square.style.backgroundColor = "#1d1d1d";
+            }, 1000);
+        });
+
+        container.appendChild(square);
+    }
+</script>
+
+</body>
+</html>

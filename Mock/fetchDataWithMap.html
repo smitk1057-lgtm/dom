@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>
+      <button type="submit">click</button>
+    </div>
+      <script >
+
+    let div = document.querySelector('div');
+    let btn = document.querySelector("button");
+
+    btn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        fetch('https://fakestoreapi.com/products')
+            .then((item) => {
+                return item.json();
+            })
+            .then((data) => {
+                data.map((t) => {
+                    let para = document.createElement("p");
+                    let img = document.createElement("img");
+
+                    para.innerText = t.title;
+                    img.src = t.image;
+                    img.width = 100;
+
+                    div.appendChild(para);
+                    div.appendChild(img);
+                });
+            })
+            .catch((err) => {
+                console.log("fail", err.message);
+            });
+    });
+</script>
+      
+  </body>
+</html>
